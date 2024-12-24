@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cupcake House</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('./img/home3.jpg'); /* Ganti dengan path gambar yang sesuai */
+            background-size: cover; /* Agar gambar mengisi layar */
+            background-repeat: no-repeat; /* Tidak mengulang gambar */
+            background-position: center; /* Posisi background tetap di tengah */
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            left: 10%; /* Geser ke kiri */
+            top: -10%; /* Geser ke atas sedikit */
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            color: #ffa136;
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #f8bbd0;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffa136;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #ad1457;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <div class="error" id="error-message"></div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Example credentials (replace with real authentication mechanism)
+            const validUsername = "bilaa";
+            const validPassword = "12345";
+
+            if (username === validUsername && password === validPassword) {
+                // Redirect to the main page
+                window.location.href = "index.html";
+            } else {
+                errorMessage.textContent = "Invalid username or password!";
+            }
+        }
+    </script>
+</body>
+</html>
